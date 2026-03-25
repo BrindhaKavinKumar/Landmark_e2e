@@ -1,0 +1,10 @@
+[
+  {
+    "store_id": "1001",
+    "file_path": "../sample-files/file_not_found.csv",
+    "uploaded_at": "2026-03-25T11:20:00",
+    "retry_count": 3,
+    "last_error": "[Errno 2] No such file or directory: '../sample-files/file_not_found.csv'",
+    "last_failed_at": "2026-03-25T12:03:54.482666"
+  }
+]

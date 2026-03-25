@@ -1,0 +1,64 @@
+# ----------------------
+# Python
+# ----------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# ----------------------
+# Environment / secrets
+# ----------------------
+.env
+*.env
+.env.*
+.env.local
+
+# AWS credentials
+.aws/
+
+# ----------------------
+# Logs
+# ----------------------
+*.log
+logs/
+
+# ----------------------
+# OS files
+# ----------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------
+# VS Code / IDE
+# ----------------------
+.vscode/
+.idea/
+
+# ----------------------
+# Terraform
+# ----------------------
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# ----------------------
+# Docker
+# ----------------------
+*.pid
+
+# ----------------------
+# Test / temp files
+# ----------------------
+tmp/
+temp/

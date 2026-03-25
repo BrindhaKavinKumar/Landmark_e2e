@@ -1,0 +1,19 @@
+{
+  "QueueConfigurations": [
+    {
+      "Id": "SendS3UploadsToSQSV2",
+      "QueueArn": "arn:aws:sqs:eu-central-1:038897081023:retail-file-events-v2",
+      "Events": ["s3:ObjectCreated:*"],
+      "Filter": {
+        "Key": {
+          "FilterRules": [
+            {
+              "Name": "prefix",
+              "Value": "incoming/"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

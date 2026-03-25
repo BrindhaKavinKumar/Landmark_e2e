@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: retail_postgres
+    environment:
+      POSTGRES_DB: retail_db
+      POSTGRES_USER: retail_user
+      POSTGRES_PASSWORD: retail_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  worker:
+    build:
+      context: ./worker-service
+    container_name: worker_service
+    depends_on:
+      - postgres
+    env_file:
+      - ./worker-service/.env
+    volumes:
+      - ./worker-service/queue:/app/queue
+      - ./worker-service/sample-files:/app/sample-files
+
+volumes:
+  postgres_data:

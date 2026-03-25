@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Id": "AllowS3SendMessage",
+  "Statement": [
+    {
+      "Sid": "AllowS3BucketToSendMessage",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com"
+      },
+      "Action": "SQS:SendMessage",
+      "Resource": "arn:aws:sqs:eu-central-1:038897081023:retail-file-events-v2",
+      "Condition": {
+        "ArnEquals": {
+          "aws:SourceArn": "arn:aws:s3:::retail-product-updates-landmark-001"
+        },
+        "StringEquals": {
+          "aws:SourceAccount": "038897081023"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+aws_region      = "eu-central-1"
+project_name    = "retail-platform"
+bucket_name     = "retail-platform-landmark-terraform"
+main_queue_name = "retail-file-events-tf"
+dlq_name        = "retail-file-events-dlq-tf"

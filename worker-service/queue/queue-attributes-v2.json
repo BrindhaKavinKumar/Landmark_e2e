@@ -1,0 +1,3 @@
+{
+  "Policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Id\": \"AllowS3SendMessage\",\n  \"Statement\": [\n    {\n      \"Sid\": \"AllowS3BucketToSendMessage\",\n      \"Effect\": \"Allow\",\n      \"Principal\": {\n        \"Service\": \"s3.amazonaws.com\"\n      },\n      \"Action\": \"SQS:SendMessage\",\n      \"Resource\": \"arn:aws:sqs:eu-central-1:038897081023:retail-file-events-v2\",\n      \"Condition\": {\n        \"ArnEquals\": {\n          \"aws:SourceArn\": \"arn:aws:s3:::retail-product-updates-landmark-001\"\n        },\n        \"StringEquals\": {\n          \"aws:SourceAccount\": \"038897081023\"\n        }\n      }\n    }\n  ]\n}"
+}
