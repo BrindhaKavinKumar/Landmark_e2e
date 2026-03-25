@@ -37,6 +37,12 @@ jobs:
 
       # 5. Run a simple dry-run import test
       - name: Run app import test
+        env:
+          DB_HOST: localhost
+          DB_PORT: "5432"
+          DB_NAME: test_db
+          DB_USER: test_user
+          DB_PASSWORD: test_pass
         run: |
           cd worker-service
           python -c "from app.processor import process_message; print('Import OK')"
